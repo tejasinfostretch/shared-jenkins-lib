@@ -1,8 +1,10 @@
-#!/usr/bin/env groovy
 package org.foo
 
-def checkOutFrom(repo) {
-    git url: "git@github.com:jenkinsci/${repo}"
-}
+public class js {
 
-return this
+    def buildIsUatApproved() {
+        println 'Approval file does not exist.'
+        return false
+    }
+
+}
