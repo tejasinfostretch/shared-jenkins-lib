@@ -9,7 +9,7 @@ def call() {
             node scanFile.js
                     '''
     } catch(e) {
-        printl('ERRORRRR.......................')
-        printl(e)
+        println('ERRORRRR.......................')
+        println(e)
     }
 }
