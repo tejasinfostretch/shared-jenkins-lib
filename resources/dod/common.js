@@ -1,6 +1,4 @@
-const test = {
+module.exports = {
   test: "value",
   main: "main",
 };
-
-module.export = test;
