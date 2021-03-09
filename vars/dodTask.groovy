@@ -1,15 +1,14 @@
 def call(init = true) {
     copyJsFileIntoWorkspace()
     try {
-        sh '''
-            cd dodCheck
-        '''
         if (init) {
             sh '''
+                cd dodCheck
                 npm i
             '''
         }
         sh '''
+            cd dodCheck
             node dod/qTest.dod.js
         '''
     } catch (e) {
