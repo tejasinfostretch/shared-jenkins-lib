@@ -1,13 +1,13 @@
 def call() {
 
     sh '''
-    mkdir dodCheck
+    mkdir -p dodCheck
     cd dodCheck
-    mkdir bin
-    mkdir database
-    mkdir helper
+    mkdir -p bin
+    mkdir -p database
+    mkdir -p helper
     cd database
-    mkdir models
+    mkdir -p models
     '''
     def packageJson = libraryResource 'dodCheck/package.json'
     writeFile file: 'dodCheck/package.json', text: packageJson
