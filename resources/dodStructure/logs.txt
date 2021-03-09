@@ -1,0 +1,2 @@
+{"date":"2021-03-03T12:29:59.982Z","name":"test"}
+{"date":"2021-03-09T07:24:57.363Z","buildNumber":"#125","artifactName":"name-test","dodStatus":"false","dodMessage":"This is Error"}

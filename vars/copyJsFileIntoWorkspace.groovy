@@ -1,6 +1,16 @@
 def call() {
-    def commonjs = libraryResource 'dod/common.js'
-    writeFile file: 'common.js', text: commonjs
-    def scanFile = libraryResource 'dod/scanFile.js'
-    writeFile file: 'scanFile.js', text: scanFile
+
+    sh '''
+    mkdir dodCheck
+    cd dodCheck
+    mkdir bin
+    mkdir database
+    mkdir helper
+    cd database
+    mkdir models
+    '''
+    def packageJson = libraryResource 'dodCheck/package.json'
+    writeFile file: 'dodCheck/package.json', text: packageJson
+    def packageLockJson = libraryResource 'dodCheck/package-lock.json'
+    writeFile file: 'dodCheck/package-lock.json', text: packageLockJson
 }
