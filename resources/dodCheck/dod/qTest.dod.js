@@ -13,3 +13,5 @@ const init = async () => {
     console.log("Log is successfully logged..!");
   }
 };
+
+init();
