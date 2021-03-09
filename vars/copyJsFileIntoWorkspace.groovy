@@ -1,5 +1,4 @@
 def call() {
-
     sh '''
     mkdir -p dodCheck
     cd dodCheck
@@ -9,8 +8,21 @@ def call() {
     cd database
     mkdir -p models
     '''
-    def packageJson = libraryResource 'dodCheck/package.json'
-    writeFile file: 'dodCheck/package.json', text: packageJson
-    def packageLockJson = libraryResource 'dodCheck/package-lock.json'
-    writeFile file: 'dodCheck/package-lock.json', text: packageLockJson
+    String[] listFiles = [
+        'dodCheck/package.json',
+        'dodCheck/package-lock.json',
+        'dodCheck/main.js',
+        'dodCheck/.env',
+        'helper/dodLog.helper.js',
+        'helper/splunk.helper.js',
+        'database/db.js',
+        'database/index.js',
+        'database/models/dodTypes.model.js',
+        'database/models/logs.model.js',
+    ]
+
+    for (element in listFiles) {
+        def packageJson = libraryResource element
+        writeFile file: element, text: packageJson
+    }
 }

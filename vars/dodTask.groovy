@@ -1,9 +1,8 @@
 def call() {
     copyJsFileIntoWorkspace()
     try {
-
-        sh ''''''
-    } catch(e) {
+        sh '''pwd'''
+    } catch (e) {
         println('ERRORRRR.......................')
         println(e)
     }
