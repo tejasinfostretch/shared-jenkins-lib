@@ -15,6 +15,8 @@ def call() {
         'dodCheck/.env',
         'dodCheck/helper/dodLog.helper.js',
         'dodCheck/helper/splunk.helper.js',
+        'dodCheck/dod/qTest.dod.js',
+        'dodCheck/dod/splunk.dod.js',
         'dodCheck/database/db.js',
         'dodCheck/database/index.js',
         'dodCheck/database/models/dodTypes.model.js',
