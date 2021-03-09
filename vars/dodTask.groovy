@@ -1,13 +1,12 @@
 def call(init = true) {
     copyJsFileIntoWorkspace()
     try {
+        def pipeline
         if (init) {
-            sh '''
-                cd dodCheck
-                npm i
-            '''
+            pipeline = 'cd dodCheck \n npm i'
         }
         sh '''
+            echo '''+pipeline+'''
             cd dodCheck
             node dod/qTest.dod.js
         '''
@@ -15,6 +14,5 @@ def call(init = true) {
         println('ERRORRRR.......................')
         println(e)
     }
-    // removeDodCheck()
 }
 
