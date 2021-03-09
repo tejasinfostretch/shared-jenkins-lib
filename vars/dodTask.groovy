@@ -15,6 +15,6 @@ def call(init = true) {
         println('ERRORRRR.......................')
         println(e)
     }
-    removeDodCheck()
+    // removeDodCheck()
 }
 
