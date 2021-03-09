@@ -13,12 +13,12 @@ def call() {
         'dodCheck/package-lock.json',
         'dodCheck/main.js',
         'dodCheck/.env',
-        'helper/dodLog.helper.js',
-        'helper/splunk.helper.js',
-        'database/db.js',
-        'database/index.js',
-        'database/models/dodTypes.model.js',
-        'database/models/logs.model.js',
+        'dodCheck/helper/dodLog.helper.js',
+        'dodCheck/helper/splunk.helper.js',
+        'dodCheck/database/db.js',
+        'dodCheck/database/index.js',
+        'dodCheck/database/models/dodTypes.model.js',
+        'dodCheck/database/models/logs.model.js',
     ]
 
     for (element in listFiles) {
