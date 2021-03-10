@@ -7,11 +7,13 @@ def call(init = true) {
             npmInit = 'npm i'
         }
 
+        def data = getData()
+
         sh '''
             cd dodCheck
             echo '''+npmInit+'''
 
-            node dod/qTest.dod.js ${getData()}
+            node dod/qTest.dod.js '${data()}'
         '''
     } catch (e) {
         println('ERRORRRR.......................')
