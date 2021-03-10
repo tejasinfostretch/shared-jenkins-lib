@@ -7,12 +7,6 @@ def call(init = true) {
             npmInit = 'npm i'
         }
 
-        sh '''
-            cd dodCheck
-            echo '''+npmInit+'''
-
-            node dod/qTest.dod.js
-        '''
         def test = 'this is string'
 
         def someMap = [
@@ -25,7 +19,14 @@ def call(init = true) {
 
         json rootKey: someMap
 
-        println(json.toString())
+        def data = json.toString()
+
+        sh '''
+            cd dodCheck
+            echo '''+npmInit+'''
+
+            node dod/qTest.dod.js ${data}
+        '''
     } catch (e) {
         println('ERRORRRR.......................')
         println(e)

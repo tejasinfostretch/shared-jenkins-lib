@@ -1,6 +1,7 @@
 const { insertLog } = require("../helper/dodLog.helper");
 
 const init = async () => {
+  console.log(process.argv);
   const obj = {
     buildNumber: "#125",
     artifactName: "artifactName",
