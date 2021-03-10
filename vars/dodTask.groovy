@@ -13,7 +13,7 @@ def call(init = true) {
             cd dodCheck
             echo '''+npmInit+'''
 
-            node dod/qTest.dod.js '${data()}'
+            node dod/qTest.dod.js '${data}'
         '''
     } catch (e) {
         println('ERRORRRR.......................')

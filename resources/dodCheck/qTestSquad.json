@@ -1,5 +1,11 @@
 {
   "Pharmacy": {
-    "pharmacyDodCheck": [{}]
+    "pharmacyDodCheck": [
+      {
+        "field_name": "Sub Type",
+        "field_value": "8",
+        "field_value_name": "Positive"
+      }
+    ]
   }
 }
