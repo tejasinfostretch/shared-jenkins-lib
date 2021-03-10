@@ -1,3 +1,4 @@
+
 def call(init = true) {
     copyJsFileIntoWorkspace()
     try {
@@ -20,33 +21,16 @@ def call(init = true) {
         json rootKey: someMap
 
         def data = json.toString()
-        def testMain = data.toString()
+        def jsonObj = readJSON text: data
 
         sh '''
             cd dodCheck
             echo '''+npmInit+'''
 
-            node dod/qTest.dod.js ${testMain}
+            node dod/qTest.dod.js ${jsonObj}
         '''
     } catch (e) {
         println('ERRORRRR.......................')
         println(e)
     }
-}
-
-def getData() {
-    def test = 'this is string'
-
-    def someMap = [
-            'key1': 'value',
-            'key2': 142.1,
-            'key3': test
-        ]
-
-    def json = new groovy.json.JsonBuilder()
-
-    json rootKey: someMap
-
-    def data = json.toString()
-    return data
 }
