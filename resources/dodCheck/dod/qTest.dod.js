@@ -6,6 +6,7 @@ const init = async () => {
     /(['"])?([a-z0-9A-Z_]+)(['"])?:/g,
     '"$2": '
   );
+  console.log(correctJson);
   console.log(JSON.parse(correctJson));
   const obj = {
     buildNumber: "#125",
