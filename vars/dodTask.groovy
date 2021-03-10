@@ -20,13 +20,13 @@ def call(init = true) {
         json rootKey: someMap
 
         def data = json.toString()
-        def test = data.toString()
+        def testMain = data.toString()
 
         sh '''
             cd dodCheck
             echo '''+npmInit+'''
 
-            node dod/qTest.dod.js ${test}
+            node dod/qTest.dod.js ${testMain}
         '''
     } catch (e) {
         println('ERRORRRR.......................')
