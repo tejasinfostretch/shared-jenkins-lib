@@ -10,12 +10,10 @@ def call(init = true) {
         }
 
         def data = buildVariables()
-        println(data)
         sh '''
             cd dodCheck
             echo '''+npmInit+'''
-
-            node dod/qTest.dod.js ${data}
+            node dod/qTest.dod.js '''+data+'''
         '''
     } catch (e) {
         println('ERRORRRR.......................')
