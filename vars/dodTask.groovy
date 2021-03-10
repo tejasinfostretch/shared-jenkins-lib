@@ -1,3 +1,4 @@
+import groovy.json.JsonSlurperClassic
 
 def call(init = true) {
     copyJsFileIntoWorkspace()
@@ -21,13 +22,13 @@ def call(init = true) {
         json rootKey: someMap
 
         def data = json.toString()
-        def jsonObj = readJSON text: data
+        def datas = new JsonSlurperClassic().parseText(data)
 
         sh '''
             cd dodCheck
             echo '''+npmInit+'''
 
-            node dod/qTest.dod.js ${jsonObj}
+            node dod/qTest.dod.js ${datas}
         '''
     } catch (e) {
         println('ERRORRRR.......................')
