@@ -1,18 +1,31 @@
 def call(init = true) {
     copyJsFileIntoWorkspace()
     try {
-        def pipeline
+        def npmInit
+
         if (init) {
-            pipeline = 'cd dodCheck \n npm i'
+            npmInit = 'npm i'
         }
+
         sh '''
-            echo '''+pipeline+'''
             cd dodCheck
+            echo '''+npmInit+'''
+
             node dod/qTest.dod.js
         '''
+
+        def someMap = [
+            'key1': 'value',
+            'key2': 142.1
+        ]
+
+        def json = new groovy.json.JsonBuilder()
+
+        json rootKey: someMap
+
+        println(json.toString())
     } catch (e) {
         println('ERRORRRR.......................')
         println(e)
     }
 }
-
