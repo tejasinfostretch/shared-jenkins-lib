@@ -10,6 +10,7 @@ def call(init = true) {
         }
 
         def data = buildVariables()
+        println(data)
         sh '''
             cd dodCheck
             echo '''+npmInit+'''
