@@ -13,10 +13,12 @@ def call(init = true) {
 
             node dod/qTest.dod.js
         '''
+        def test = 'this is string'
 
         def someMap = [
             'key1': 'value',
-            'key2': 142.1
+            'key2': 142.1,
+            'key3': test
         ]
 
         def json = new groovy.json.JsonBuilder()
